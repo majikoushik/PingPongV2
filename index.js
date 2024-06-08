@@ -29,7 +29,7 @@ var targetHitSoundObj;
 var backgroundSoundObj;
 var endGameSoundObj;
 var reAnimationId;
-var maxScore = 1;
+var maxScore = 10;
 
 class sound {
   constructor(src, volume) {
@@ -185,6 +185,8 @@ function menu() {
 
 // Start the game
 function startGame() {
+  leftScore = 0;
+  rightScore = 0;
 	// Don't accept any more clicks
   canvas.removeEventListener('click', startGame);
   targetHitSoundObj = new sound("sounds/game-ball-tap.wav", 0.6);
